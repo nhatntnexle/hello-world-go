@@ -3,6 +3,7 @@ language: go
 go:
   - 1.12
   - master
+install:
+  - export GOPATH="${TRAVIS_BUILD_DIR}:$GOPATH"
 script:
-  - golangci-lint run       # run a bunch of code checkers/linters in parallel
   - go test -v -race ./...  # Run all the tests with the race detector enabled
